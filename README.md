@@ -53,29 +53,17 @@ cd medical_nlp_pipeline
     ```
 
 ### Step 3: Install Dependencies
-We recommend using a virtual environment.
+We have consolidated all packages and model links into a single file.
 
-**Option A: Using Standard pip**
 ```bash
-# Create and activate virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+# Option A: Using Standard Pip
+pip install -r requirements.txt
 
-# Install Core Dependencies
-pip install -U pip setuptools wheel
-pip install spacy scispacy transformers torch pandas openai numpy python-dotenv
-
-# Install Specialized Medical Models (Direct Download)
-pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bc5cdr_md-0.5.4.tar.gz
-pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bionlp13cg_md-0.5.4.tar.gz
+# Option B: Using uv (Recommended for speed)
+uv pip install -r requirements.txt
 ```
 
-**Option B: Using uv (High Speed)**
-```bash
-uv pip install spacy scispacy transformers torch pandas openai numpy python-dotenv
-uv pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bc5cdr_md-0.5.4.tar.gz
-uv pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bionlp13cg_md-0.5.4.tar.gz
-```
+*Note: This will automatically download the large medical models (~100MB each).*
 
 ---
 
